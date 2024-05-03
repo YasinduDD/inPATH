@@ -1,0 +1,82 @@
+<html>
+<style>
+    /* CSS styles */
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F9FCFF;
+        padding: 20px;
+        margin-top: 70px;
+    }
+
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        width: 400px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        display: block;
+        margin: 0 auto; /* Center the button horizontally */
+        background-color: #0056b3;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #162447;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        color: #333;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <div class="logo">
+        <img src="/logo.png" alt="Logo">
+    </div>
+    <h2>Sign Up</h2>
+    <form action="signupadmin" method="POST" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="User Name / e-mail">
+        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="fullName" placeholder="Full Name">
+        <input type="text" name="acq" placeholder="Academic Qualifications">
+        <!-- <input type="file" name="profilePicture" accept="image/*"> -->
+        <input type="submit">
+    </form>
+</body>
+</html>

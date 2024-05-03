@@ -1,0 +1,105 @@
+<!-- <html>
+    <body>
+        <h1>Check Your Attendence</h1>
+        <a href="https://docs.google.com/spreadsheets/d/1eJlUeh8d-cQr7sNgkxdpo8Zz9LBMtV4tMqTW8_2rWjs/edit#gid=40932136"><button class="student-button">CE1202 - Fluid Mechanics </button></a>
+        <a href="https://docs.google.com/spreadsheets/d/1vpfpc8ulJjqZK-lRvl6_hAeyqpAus3wLNQCWVGcln7w/edit#gid=498178032"><button class="student-button">EE1302 - Electronics</button></a>
+        <a href="https://docs.google.com/spreadsheets/d/17poZ2EdBqBHIEM_eGp7vLuhaNJPEm3zSGiLQlL_kAMg/edit#gid=72763246"><button class="student-button">IS1302 - Engineering Mathematics II</button></a>
+        <a href="https://docs.google.com/spreadsheets/d/1fCwbgmKg6wCTG8TMOzvsOj6Zg0R_ziA64JkLG1iBqRg/edit#gid=70676500"><button class="student-button">ME1303 - Basic Manufacturing Processes</button></a>
+        <a href="https://docs.google.com/spreadsheets/d/1sKVfHp_z8zoMXKjmgGRY2SrPU7-X8CAXQ1Yd3y5Lh98/edit#gid=1097768107"><button class="student-button">CO1302 - Programming For Engineers</button></a>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+        .student-button {
+            display: block;
+            width: 300px;
+            height: 50px;
+            margin: 10px auto;
+            background-color: #0056b3;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            border: none; /* Removed border */
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500; /* Adjusted font weight */
+            cursor: pointer;
+        }
+        .navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="/logo.png" class="logo">
+        <ul class="nav-items">
+          <li><a href="/profile/<%= user._id %>">Profile</a></li>
+          <li><a href="/attend/<%= user._id %>">Attendance</a></li>
+          <li><a href="/exams/<%= user._id %>">Exams</a></li>
+          <li><a href="/showann/<%= user._id %>">Announcements</a></li>
+          <li><a href="/pre/<%= user._id %>">Predictions</a></li>
+          <li><a href="#">CV Maker</a></li>
+        </ul>
+      </div>
+    <h1>Check Your Attendance</h1>
+    <a href="https://docs.google.com/spreadsheets/d/1eJlUeh8d-cQr7sNgkxdpo8Zz9LBMtV4tMqTW8_2rWjs/edit#gid=40932136" target="_blank"><button class="student-button">CE1202 - Fluid Mechanics</button></a>
+    <a href="https://docs.google.com/spreadsheets/d/1vpfpc8ulJjqZK-lRvl6_hAeyqpAus3wLNQCWVGcln7w/edit#gid=498178032" target="_blank"><button class="student-button">EE1302 - Electronics</button></a>
+    <a href="https://docs.google.com/spreadsheets/d/17poZ2EdBqBHIEM_eGp7vLuhaNJPEm3zSGiLQlL_kAMg/edit#gid=72763246" target="_blank"><button class="student-button">IS1302 - Engineering Mathematics II</button></a>
+    <a href="https://docs.google.com/spreadsheets/d/1fCwbgmKg6wCTG8TMOzvsOj6Zg0R_ziA64JkLG1iBqRg/edit#gid=70676500" target="_blank"><button class="student-button">ME1303 - Basic Manufacturing Processes</button></a>
+    <a href="https://docs.google.com/spreadsheets/d/1sKVfHp_z8zoMXKjmgGRY2SrPU7-X8CAXQ1Yd3y5Lh98/edit#gid=1097768107" target="_blank"><button class="student-button">CO1302 - Programming For Engineers</button></a>
+</body>
+</html>

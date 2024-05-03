@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Department Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="blue darken-4" role="navigation"></nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center blue-text">Department Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Choosing the best department for you to choose with for a better future
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="post" class="row s13">
+      <div class="row">
+
+        <div class="input-field row s1">
+            <label for="col1"><b>IS1281 Engineering Measurement</b></label>
+            <br>
+          <input placeholder="Enter your result" name="Course1" id="col1" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col2"><b>IS1301 Engineering Mathematics I</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course2" id="col2" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+            <label for="col3"><b>ME1301 Engineering Mechanics</b></label>
+            <br>
+          <input placeholder="Enter your result" name="Course3" id="col3" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col4"><b>CE1201 Properties of Materials</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course4" id="col4" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col5"><b>EE1201 Electricity</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course5" id="col5" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col6"><b>ME1202 Introduction to Thermodynamics</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course6" id="col6" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col7"><b>CO1201 Introduction to Computer Systems</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course7" id="col7" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col8"><b>IS1302 Engineering Mathematics II</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course8" id="col8" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col9"><b>CO1302 - Programming for Engineers</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course9" id="col9" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col10"><b>CE1202 Introduction to Fluid Mechanics</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course10" id="col10" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col11"><b>EE1302 Electronics</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course11" id="col11" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col12"><b>ME1303 Basic Manufacturing Processes</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course12" id="col12" type="text" class="validate">
+        </div>
+
+        <div class="input-field row s1">
+          <label for="col13"><b>ME1304 Engineering Drawing</b></label>
+          <br>
+        <input placeholder="Enter your result" name="Course13" id="col13" type="text" class="validate">
+        </div>
+
+      
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-blue darken">Predict Department</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        {{pred}}<br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+
+  
+  </body>
+</html>
+

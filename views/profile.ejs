@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .profile {
+    width: 500px;
+    height: 500px;
+    margin-right: 20px;
+    overflow: hidden;
+  }
+  
+  .content {
+    flex-grow: 1;
+  }
+  
+  h1 {
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #333;
+  }
+  
+  .highlight {
+    display: inline-block; /* Display as inline block for vertical alignment */
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 5px;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .logout-button,
+  .edit-profile-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logout-button:hover,
+  .edit-profile-button:hover {
+    background-color: #0056b3;
+  }
+  
+    .navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+  
+  </style>
+<body>
+  <div class="navbar">
+    <img src="/logo.png" class="logo">
+    <ul class="nav-items">
+      <li><a href="/profile/<%= user._id %>">Profile</a></li>
+      <li><a href="/attend/<%= user._id %>">Attendance</a></li>
+      <li><a href="/exams/<%= user._id %>">Exams</a></li>
+      <li><a href="/showann/<%= user._id %>">Announcements</a></li>
+      <li><a href="/pre/<%= user._id %>">Predictions</a></li>
+      <li><a href="#">CV Maker</a></li>
+    </ul>
+  </div>
+  <div class="container">
+  <div class="profile">
+    <img src="<%= user.propic %>" alt="Profile Picture">
+  </div>
+  <div class="content">
+  <h1>User Profile</h1>
+  <p>Full Name: <%= user.fn %></p>
+  <p>ID: <%= user.id %></p>
+  <p>Registration Number: <%= user.regnum %></p>
+  <p>GPA: <%= user.gpa %></p>
+  <div class="buttons">
+    <a href="/loginuser"><button class="logout-button">Logout</button></a>
+    <a href="/signupuser"><button class="edit-profile-button">Edit Profile</button></a>
+  </div>
+  </div>
+  </div>
+
+</body>
+</html>

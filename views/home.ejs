@@ -1,0 +1,69 @@
+<!-- <html>
+    <head>
+        <script>
+            function handleClick() {
+              // Clear the current page
+              document.body.innerHTML = '';
+        
+              // Open a new page
+              window.open('/loginadmin');
+            }
+          </script>
+        
+    </head>
+    <body>
+        <h1>inPATH education</h1>
+        <button onclick="handleClick()">I'm a Lecturer</button>
+        <a href="/loginuser"><button>I'm a Student</button></a> -->
+        <!-- <div id="output"></div> -->
+    <!-- </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("/bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 500px;
+        margin-bottom: 230px;
+      }
+
+      .button-container button {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+    .lecturer-button,
+    .student-button {
+      padding: 7px 45px;
+      font-size: 15px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-color: black;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.2px; 
+    }
+    </style>
+
+  </head>
+  <body>
+    <!-- <h1>inPATH education</h1> -->
+    <div class="button-container">
+      <a href="/loginuser"><button class="student-button">I'm a Student</button></a>
+      <a href="/loginadmin"><button class="lecturer-button">I'm a Lecturer</button></a>
+    </div>
+  </body>
+</html>
+

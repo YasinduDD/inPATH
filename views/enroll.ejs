@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>GP Calculator</title> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<!-- <form action="/" method="POST">
+    <br>
+    <label for="fn">Full Name: </label>
+    <input type="text" id="fn" name="fn" required> <br><br>
+    <label for="id">Index Number: </label>
+    <input type="text" id="id" name="id" required> <br><br>
+    <label for="regnum">Registration No: </label>
+    <input type="text" id="regnum" name="regnum" required> <br><br>
+    <label for="gender">Gender: </label>
+    <select id="gender" name="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>    
+    </select> <br><br>
+    <div class="wrapper">
+
+        <div class="form-row">
+            <div class="col">
+                <input id="course-code" class="form-control" type="text" placeholder="Course Code">
+            </div>
+            <div class="col">
+                <input id="unit-load" class="form-control" type="number" placeholder="Unit Load" min="1" max="15">
+            </div>
+            <div class="col">
+                <select id="grade" class="form-control">
+                    <option value="">Grade</option>
+                    <option value="4">A+</option>
+                    <option value="4">A</option>
+                    <option value="3.7">A-</option>
+                    <option value="3.3">B+</option>
+                    <option value="3">B</option>
+                    <option value="2.7">B-</option>
+                    <option value="2.3">C+</option>
+                    <option value="2">C</option>
+                </select>
+            </div>
+            <div class="col">
+                <input id="add" class="btn btn-primary" type="button" value="Add">
+
+            </div>
+        </div>
+        <table id="table" class="table table-bordered display-none">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Unit Load</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+        
+            </tbody>
+            <tfoot id="tfoot">
+        
+            </tfoot>
+        </table>
+        <div class="row">
+            <div class="col">
+                <input id="calc-gp" class="btn btn-success display-none" type="button" value="Calc GP">
+            </div>
+            <div class="col">
+            <input id="clear" class="btn btn-warning display-none" type="button" value="Clear">
+            </div>
+        </div>
+    </div>
+    <br><label for="gpa">Enter GPA (> 2.00 for enrollment): </label>
+    <input type="text" id="gpa" name="gpa" required>
+    <br><button>Submit</button> -->
+    <style>
+      .navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 20px auto 0;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+  }
+    
+      label {
+        font-weight: bold;
+      }
+    
+      input[type="text"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+    
+      .wrapper {
+        margin-top: 20px;
+      }
+    
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+    
+      .col {
+        flex: 1;
+        margin-right: 10px;
+      }
+    
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    
+      .table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+    
+      .table th,
+      .table td {
+        padding: 8px;
+        border: 1px solid #ccc;
+        text-align: left;
+      }
+    
+      .row {
+        margin-top: 20px;
+      }
+    
+      .col:nth-child(2) {
+        margin-right: 0;
+      }
+    
+      button {
+        padding: 8px 16px;
+        font-size: 14px;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+
+<div class="navbar">
+  <img src="logo.png" class="logo">
+  <ul class="nav-items">
+    <li><a href="/index">Your Profile</a></li>
+    <li><a href="/enroll">Entoll a Student</a></li>
+    <li><a href="/uploadresults">Upload Results</a></li>
+    <li><a href="/allocatedesks">Allocate Desks</a></li>
+    <li><a href="/announcements">Announcements</a></li>
+  </ul>
+</div>
+    
+    <form action="/enroll" method="POST">
+      <br>
+      <label for="fn">Full Name:</label>
+      <input type="text" id="fn" name="fn" required><br><br>
+      <label for="id">Index Number:</label>
+      <input type="text" id="id" name="id" required><br><br>
+      <label for="regnum">Registration No:</label>
+      <input type="text" id="regnum" name="regnum" required><br><br>
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select><br><br>
+      <div class="wrapper">
+        <div class="form-row">
+          <div class="col">
+            <input id="course-code" class="form-control" type="text" placeholder="Course Code">
+          </div>
+          <div class="col">
+            <input id="unit-load" class="form-control" type="number" placeholder="Unit Load" min="1" max="15">
+          </div>
+          <div class="col">
+            <select id="grade" class="form-control">
+              <option value="">Grade</option>
+              <option value="4">A+</option>
+              <option value="4">A</option>
+              <option value="3.7">A-</option>
+              <option value="3.3">B+</option>
+              <option value="3">B</option>
+              <option value="2.7">B-</option>
+              <option value="2.3">C+</option>
+              <option value="2">C</option>
+            </select>
+          </div>
+          <div class="col">
+            <input id="add" class="btn btn-primary" type="button" value="Add">
+          </div>
+        </div>
+        <table id="table" class="table table-bordered display-none">
+          <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Unit Load</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+          <tbody id="tbody">
+          
+          </tbody>
+          <tfoot id="tfoot">
+          
+          </tfoot>
+        </table>
+        <div class="row">
+          <div class="col">
+            <input id="calc-gp" class="btn btn-success display-none" type="button" value="Calc GP">
+          </div>
+          <div class="col">
+            <input id="clear" class="btn btn-warning display-none" type="button" value="Clear">
+          </div>
+        </div>
+      </div>
+      <br>
+      <label for="gpa">Enter GPA (> 2.00 for enrollment):</label>
+      <input type="text" id="gpa" name="gpa" required><br>
+      <button>Submit</button>
+    </form>
+    
+    
+    <script>
+        const add = document.querySelector("#add");
+const courseCode = document.querySelector("#course-code");
+const unitLoad = document.querySelector("#unit-load");
+const grade = document.querySelector("#grade");
+const tbody = document.querySelector("#tbody");
+const tfoot = document.querySelector("#tfoot");
+const table = document.querySelector("#table");
+const calcGp = document.querySelector("#calc-gp");
+const clear = document.querySelector("#clear");
+
+let gpArry = [];
+
+add.addEventListener("click", () => {
+  if (
+    courseCode.value === "" ||
+    unitLoad.value <= 0 ||
+    grade.selectedIndex === 0
+  ) {
+    alert("Wrong input,check and try again");
+  } else {
+    const tr = document.createElement("tr");
+    const tdCourseCode = document.createElement("td");
+    tdCourseCode.innerHTML = courseCode.value;
+    const tdUnitLoad = document.createElement("td");
+    tdUnitLoad.innerHTML = unitLoad.value;
+    const tdGrade = document.createElement("td");
+    tdGrade.innerHTML = grade.options[grade.selectedIndex].text;
+    tr.appendChild(tdCourseCode);
+    tr.appendChild(tdUnitLoad);
+    tr.appendChild(tdGrade);
+    tbody.appendChild(tr);
+    table.classList.remove("display-none");
+    calcGp.classList.remove("display-none");
+    clear.classList.remove("display-none");
+    gpArry.push({
+      unitLoad: unitLoad.value,
+      grade: grade.options[grade.selectedIndex].value,
+    });
+    console.log(gpArry);
+    courseCode.value = "";
+    unitLoad.value = "";
+    grade.selectedIndex = "0";
+  }
+});
+
+calcGp.addEventListener("click", () => {
+  let unitLoads = 0,
+    productOfUnitLoadsAndGrades = 0,
+    sumOfProductOfUnitLoadsAndGrades = 0;
+
+  gpArry.forEach((result) => {
+    unitLoads += parseInt(result.unitLoad);
+    productOfUnitLoadsAndGrades =
+      parseInt(result.unitLoad) * parseInt(result.grade);
+    sumOfProductOfUnitLoadsAndGrades += productOfUnitLoadsAndGrades;
+  });
+  const tr = document.createElement("tr");
+
+  tdTotalUnitLoad = document.createElement("td");
+  tdTotalUnitLoad.innerHTML = `your total unit load is ${unitLoads}`;
+
+  tdGpa = document.createElement("td");
+  tdGpa.setAttribute("colspan", "2");
+  tdGpa.innerHTML = `your GPA is ${(
+    sumOfProductOfUnitLoadsAndGrades / unitLoads
+  ).toFixed(2)} `;
+
+  tr.appendChild(tdTotalUnitLoad);
+  tr.appendChild(tdGpa);
+    if (tfoot.querySelector("tr") !== null) {
+        tfoot.querySelector("tr").remove();
+    }
+  tfoot.appendChild(tr);
+});
+
+clear.addEventListener("click", () => {
+  gpArry = [];
+  tbody.querySelectorAll("*").forEach((child) => child.remove());
+  if (tfoot.querySelector("tr") !== null) {
+    tfoot.querySelector("tr").remove();
+  }
+
+  table.classList.add("display-none");
+  calcGp.classList.add("display-none");
+  clear.classList.add("display-none");
+});
+
+    </script>
+</body>
+
+</form>

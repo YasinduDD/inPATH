@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .entry {
+    /* border: 1px solid #ccc; */
+    margin-left: 40px;
+  }
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+  h1 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    /* text-align: center; */
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+    /* border: 1px solid #ccc; */
+    /* padding: 10px; */
+  }
+
+  .full-name {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .academic-qualifications {
+    font-style: italic;
+  }
+  
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <img src="/logo.png" class="logo">
+  <ul class="nav-items">
+    <li><a href="/index/<%= admin._id %>">Your Profile</a></li>
+    <li><a href="/enroll">Entoll a Student</a></li>
+    <li><a href="/uploadresults">Upload Results</a></li>
+    <li><a href="/allocatedesks">Allocate Desks</a></li>
+    <li><a href="/announcements">Announcements</a></li>
+  </ul>
+</div>
+<div class="entry">
+<h1>Welcome, <%= admin.fn %></h1>
+<p>e-mail: <%= admin.username %></p>
+<p>About You: <%= admin.acq %></p>
+</div>
+
+</body>
+</html>
+
+

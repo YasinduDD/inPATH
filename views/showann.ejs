@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Announcements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .announcements {
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border: 1px solid #162447;
+      padding: 10px;
+    }
+
+    .title {
+      flex: 1;
+      font-size: 15px;
+    }
+
+    .pdf-link {
+      color: #0066cc;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    .pdf-link:hover {
+      text-decoration: underline;
+    }
+
+    .navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    }
+  
+    .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Arial", sans-serif;
+  outline: none; /* Add this line */
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <img src="/logo.png" class="logo">
+    <ul class="nav-items">
+      <li><a href="/profile/<%= user._id %>">Profile</a></li>
+      <li><a href="/attend/<%= user._id %>">Attendance</a></li>
+      <li><a href="/exams/<%= user._id %>">Exams</a></li>
+      <li><a href="/showann/<%= user._id %>">Announcements</a></li>
+      <li><a href="/pre/<%= user._id %>">Predictions</a></li>
+      <li><a href="#">CV Maker</a></li>
+    </ul>
+  </div>
+  <div class="announcements">
+    <h1>Announcements</h1>
+    <ul>
+      <% announcements.forEach(function(announcement) { %>
+        <li>
+          <div class="title"><%= announcement.title %></div>
+          <a href="/showann/viewpdf/<%= announcement._id %>" class="pdf-link">View PDF</a>
+        </li>
+      <% }); %>
+    </ul>
+    
+  </div>
+</body>
+</html>

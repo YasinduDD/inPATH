@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./Partials/headuser.ejs') %>
+<body>
+  <%- include('./Partials/navuser.ejs') %>
+  <h1>Test Page</h1>
+  <!-- Your test page content -->
+
+  <!-- <script>
+    // JavaScript code to redirect to profile page
+    // and pass the user object as a query parameter
+    const user = JSON.stringify(user);
+
+
+    const encodedUser = encodeURIComponent(JSON.stringify(user));
+    const profileUrl = `/profile?user=${encodedUser}`;
+
+    // Redirect to profile page
+    window.location.href = profileUrl;
+  </script> -->
+  <a href="/profile/<%= user._id %>">View Profile</a>
+</body>
+</html>

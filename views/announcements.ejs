@@ -1,0 +1,138 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Result Sheet</title>
+  </head>
+  <body>
+    <h1>Make a Announcement</h1>
+    <form action="/announcements" method="POST" enctype="multipart/form-data">
+      <label for="title">Title: </label>
+      <input type="text" id="title" name="title" required><br><br>
+      <label for="announcement">Announcement:</label>
+      <input type="file" id="announcement" name="announcement" accept=".pdf" required><br><br>
+      <input type="submit" value="Upload">
+    </form>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .navbar {
+    background-color: #162447;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  .nav-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-items li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .nav-items li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .nav-items li a:hover {
+    background-color: #1e3b6b;
+  }
+  
+  .nav-items li a.active {
+    color: #162447;
+    background-color: #fff;
+  }
+  
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #0056b3;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #162447;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <img src="logo.png" class="logo">
+    <ul class="nav-items">
+      <li><a href="/index">Your Profile</a></li>
+      <li><a href="/enroll">Entoll a Student</a></li>
+      <li><a href="/uploadresults">Upload Results</a></li>
+      <li><a href="/allocatedesks">Allocate Desks</a></li>
+      <li><a href="/announcements">Announcements</a></li>
+    </ul>
+  </div>
+
+  <h1>Make an Announcement</h1>
+  <form action="/announcements" method="POST" enctype="multipart/form-data">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br><br>
+    <label for="announcement">Announcement:</label>
+    <input type="file" id="announcement" name="announcement" accept=".pdf" required><br><br>
+    <input type="submit" value="Upload">
+  </form>
+</body>
+</html>
+
+
+
+
+
